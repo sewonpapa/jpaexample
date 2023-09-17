@@ -1,9 +1,7 @@
 package kr.co.seeya.jpaexample.reserve.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
@@ -19,6 +17,7 @@ import java.time.LocalDateTime;
  * 2023-09-06        herot       최초 생성
  */
 @Entity
+@Data
 @Table(name="user")
 public class User {
     @Id
@@ -35,5 +34,9 @@ public class User {
         this.email = email;
         this.name = name;
         this.createDate = createDate;
+    }
+
+    public void changeName(String newName){
+        this.name = newName;
     }
 }
