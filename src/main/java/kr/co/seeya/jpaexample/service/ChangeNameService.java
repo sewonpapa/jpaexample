@@ -17,19 +17,18 @@ import kr.co.seeya.jpaexample.reserve.domain.User;
  * 2023-09-17        herot       최초 생성
  */
 public class ChangeNameService {
-    EntityManager em = EMF.createEntityManager();
-    EntityTransaction tx = em.getTransaction();
-
     public void changeName(String email, String newName) {
+        EntityManager em = EMF.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
 
-            User user = em.find(User.class, "email");
+            User user = em.find(User.class, email);
 
             if (user == null)
                 throw new RuntimeException();
 
-            user.setName("임환기");
+            user.setName(newName);
             tx.commit();
         } catch (Exception ex) {
             tx.rollback();

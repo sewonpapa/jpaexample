@@ -55,8 +55,6 @@ public class JpaexampleApplication {
 //
 //		emf.close();
 
-
-
 		SpringApplication.run(JpaexampleApplication.class, args);
 	}
 }

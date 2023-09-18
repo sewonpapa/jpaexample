@@ -17,10 +17,10 @@ import kr.co.seeya.jpaexample.reserve.domain.User;
  * 2023-09-17        herot       최초 생성
  */
 public class RemoveUserService {
-    EntityManager em = EMF.createEntityManager();
-    EntityTransaction tx = em.getTransaction();
-
     public void removeUser(String email){
+        EntityManager em = EMF.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+
         try{
             tx.begin();
 

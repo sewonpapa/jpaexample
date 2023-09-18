@@ -11,6 +11,7 @@ import kr.co.seeya.jpaexample.service.RemoveUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Remove;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -37,7 +38,8 @@ public class Main {
     private static RemoveUserService removeUserService = new RemoveUserService();
 
     @PostConstruct
-    public void main(){
+    public void progRun(){
+        System.out.println("11111111111");
         EMF.init();
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
@@ -51,8 +53,8 @@ public class Main {
                 }else if(line.startsWith("get ")){
                     handleGet(line);
                 }else if(line.startsWith("change name")){
-                    handleGet(line);
-                }else if(line.startsWith("remove")){
+                    handleChangeName(line);
+                }else if(line.startsWith("remove ")){
                     handleRemove(line);
                 }else if(line.startsWith("exit")){
                     break;
@@ -100,7 +102,7 @@ public class Main {
     }
 
     private static void handleChangeName(String line){
-        String[] v = line.substring(4).split(" ");
+        String[] v = line.substring(12).split(" ");
         User user = null;
         try {
             if (v.length != 2) {
@@ -115,7 +117,7 @@ public class Main {
     }
 
     private static void handleRemove(String line){
-        String[] v = line.substring(4).split(" ");
+        String[] v = line.substring(7).split(" ");
         try {
             if (v.length != 1) {
                 log.info("파라메터가 정상적으로 전달되지 않았습니다.");

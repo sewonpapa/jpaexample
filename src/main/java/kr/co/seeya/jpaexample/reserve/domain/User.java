@@ -21,10 +21,10 @@ import java.time.LocalDateTime;
 @Table(name="user")
 public class User {
     @Id
-    private String email;
-    private String name;
+    String email;
+    String name;
     @Column(name="create_date")
-    private LocalDateTime createDate;
+    LocalDateTime createDate;
 
     protected User(){
 
