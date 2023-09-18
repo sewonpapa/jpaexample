@@ -37,7 +37,6 @@ public class Main {
     private static ChangeNameService changeNameService = new ChangeNameService();
     private static RemoveUserService removeUserService = new RemoveUserService();
 
-    @PostConstruct
     public void progRun(){
         System.out.println("11111111111");
         EMF.init();
