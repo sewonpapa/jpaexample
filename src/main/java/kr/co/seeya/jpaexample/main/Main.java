@@ -1,4 +1,4 @@
-package kr.co.seeya.jpaexample;
+package kr.co.seeya.jpaexample.main;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityExistsException;
